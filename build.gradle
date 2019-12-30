@@ -1,0 +1,148 @@
+//first
+//buildscript {
+//    repositories {
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath 'com.google.gradle:osdetector-gradle-plugin:1.6.0'
+//    }
+//}
+//
+//apply plugin: 'application'
+//apply plugin: 'java'
+//apply plugin: 'com.google.osdetector'
+//
+//ext.platform = osdetector.os == 'osx' ? 'mac' : osdetector.os == 'windows' ? 'win' : osdetector.os
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//dependencies {
+//    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+//    compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+//    compile "org.openjfx:javafx-base:11:$platform"
+//    compile "org.openjfx:javafx-graphics:11:$platform"
+//    compile "org.openjfx:javafx-controls:11:$platform"
+//    compile "org.openjfx:javafx-fxml:11:$platform"
+//    compile "org.openjfx:javafx-swing:11:$platform"
+//    compile "org.openjfx:javafx-media:11:$platform"
+//    compile group: 'org.controlsfx', name: 'controlsfx', version: '8.40.12'
+//
+//    /* uncomment for cross-platform jar:
+//    compile "org.openjfx:javafx-graphics:11:win"
+//    compile "org.openjfx:javafx-graphics:11:linux"
+//    compile "org.openjfx:javafx-graphics:11:mac"
+//    */
+//}
+//
+//String MainClass='org.openjfx.MainApp'
+//
+//compileJava {
+//    doFirst {
+//        options.compilerArgs = [
+//                '--module-path', classpath.asPath,
+//                '--add-modules', 'javafx.controls',
+//                '--add-modules', 'javafx.fxml',
+//        ]
+//    }
+//}
+//
+//run {
+//    doFirst {
+//        jvmArgs = [
+//                '-Djdk.gtk.version=2', //JVM nutzt standardmäßig GTK3, mit dem die DnD Funktionen von JavaFX nicht kompatibel sind
+//                '--module-path', classpath.asPath,
+//                '--add-modules', 'javafx.controls',
+//                '--add-modules', 'javafx.fxml'
+//        ]
+//    }
+//}
+//
+///*application {
+//    mainClassName = MainClass
+//    applicationDefaultJvmArgs = [
+//            '-Djdk.gtk.version=2', //JVM nutzt standardmäßig GTK3, mit dem die DnD Funktionen von JavaFX nicht kompatibel sind
+//            '--module-path', classpath.asPath,
+//            '--add-modules', 'javafx.controls',
+//            '--add-modules', 'javafx.fxml'
+//    ]
+//}*/
+//
+///*installDist {
+//    manifest {
+//        attributes(
+//                'Main-Class': 'org.openjfx.MainApp'
+//        )
+//    }
+//}*/
+//
+///*jar {
+//    manifest {
+//        attributes (
+//            'Main-Class': MainClass
+//        )
+//    }
+//}*/
+//
+//mainClassName = MainClass
+
+
+plugins {
+    id 'application'
+    id "org.openjfx.javafxplugin" version "0.0.7"
+    //id 'org.beryx.jlink' version '2.10.2'
+}
+
+repositories {
+    mavenCentral()
+}
+
+//sourceSets {
+    //main.java.include "javafx_11.0.1/src"
+    //main.resources.srcDir("javafx_11.0.1")
+//}
+
+dependencies {
+    //compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    compile "com.google.code.gson:gson:2.7"
+//    runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:win"
+//    runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:linux"
+//    runtimeOnly "org.openjfx:javafx-graphics:$javafx.version:mac"
+}
+
+//String Classpath = sourceSets.main.runtimeClasspath.asPath
+
+
+
+
+applicationDefaultJvmArgs = ['-Djdk.gtk.version=2']
+
+
+javafx {
+    version = "12"
+    modules = [
+            'javafx.controls',
+            'javafx.fxml',
+            'javafx.base',
+            'javafx.graphics',
+            'javafx.swing',
+            'javafx.media'
+    ]
+}
+
+/*applicationDefaultJvmArgs = [
+        '-Djdk.gtk.version=2',
+        '--module-path', sourceSets.main.runtimeClasspath.asPath,
+        '--add-modules', 'javafx.controls',
+        '--add-modules', 'javafx.fxml',
+]*/
+
+mainClassName = 'org.openjfx.MainApp'
+
+jar {
+    manifest.attributes 'Main-Class': 'org.openjfx.MainApp'
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

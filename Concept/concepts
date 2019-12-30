@@ -1,0 +1,5 @@
+View Design:
+Editview and Animateview
+We have a View for presenting the Data. Visualizing the dancers on the Grid.
+Editview extends this view with functionalities for editing the Data.
+Animateview extends this view with functionalities for animating the Data.
