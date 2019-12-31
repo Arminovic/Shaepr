@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Shaepr:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Shaepr_jar</output-path>
+    <root id="archive" name="Shaepr.jar">
+      <element id="module-output" name="Shaepr_main" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/11/f8d1ced6047b010f1e3bb92dc060862179ce5897/javafx-base-11-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/11/794488e3b1f4635d9a1b842bdc872a5eb8fd54ca/javafx-controls-11-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/11/9fcd3e8e3227ec97bf503f7991fad1f3b14d005/javafx-base-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-fxml/11/e7a757b580fc3e2e1a121768606c7836eef418c/javafx-fxml-11-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/11/58d961774262ec972bf304e16c154a8e18c2050b/javafx-controls-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-swing/11/86e2c4feb81f5147bbb5e662b0892a61535a7472/javafx-swing-11-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-media/11/f65e90798210a9ff1cad3e7686af8c1db138477f/javafx-media-11-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/11/4ab9edd8d481a420044c473fdb5718ccdd35c836/javafx-graphics-11-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/11/a736dd079047ec0b72b8c4970842a5c5e0c19f2f/javafx-graphics-11.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
