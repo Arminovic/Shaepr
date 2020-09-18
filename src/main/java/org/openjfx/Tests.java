@@ -27,11 +27,11 @@ public class Tests {
     public void testData(){
         Vector<Dancer> males = new Vector<>();
         for(int i = 8; i>0; i--){
-            males.add(new Dancer("m"+i, Data.sex.male, i));
+            males.add(new Dancer("m"+i, Sex.Male, i));
         }
         Vector<Dancer> females = new Vector<>();
         for(int i = 1; i<=8; i++){
-            females.add(new Dancer("f"+i, Data.sex.female, i));
+            females.add(new Dancer("f"+i, Sex.Female, i));
         }
 
         Shapesequence shapesequence = new Shapesequence();
@@ -131,11 +131,11 @@ public class Tests {
 
         Vector<Dancer> males = new Vector<>();
         for(int i = 8; i>0; i--){
-            males.add(new Dancer("m"+i, Data.sex.male, i));
+            males.add(new Dancer("m"+i, Sex.Male, i));
         }
         Vector<Dancer> females = new Vector<>();
         for(int i = 1; i<=8; i++){
-            females.add(new Dancer("f"+i, Data.sex.female, i));
+            females.add(new Dancer("f"+i, Sex.Female, i));
         }
 
         Shapesequence shapesequence = new Shapesequence();

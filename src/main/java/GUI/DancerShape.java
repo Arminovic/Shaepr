@@ -4,6 +4,7 @@ import Data.CommonValues;
 import Data.Dancer;
 import Data.Data;
 import Data.Pose;
+import Data.Sex;
 import GUI.View.GridView;
 import javafx.beans.property.DoubleProperty;
 import javafx.scene.control.Label;
@@ -137,14 +138,18 @@ public class DancerShape extends StackPane implements DancerNode {
 
     public void repaint() {
         //System.out.println("repaint " + pose.getDancer().getName());
+        if(getId() == null) {
+            System.out.println("Dancershape.repaint.getID() is null");
+            return;
+        }
         switch (getId()) {
             case connectedID:
                 int femaleNumber = 0;
                 int maleNumber = 0;
                 for (Dancer d : pose.getDancers()) {
-                    if (d.getSex().equals(Data.sex.female)) {
+                    if (d.getSex().equals(Sex.Female)) {
                         femaleNumber++;
-                    } else {
+                    } else if (d.getSex().equals(Sex.Male)) {
                         maleNumber++;
                     }
                 }
@@ -157,8 +162,8 @@ public class DancerShape extends StackPane implements DancerNode {
                 boolean male = false;
                 boolean female = false;
                 for (Dancer d : getDancers()) {
-                    if (d.getSex().equals(Data.sex.male)) male = true;
-                    if (d.getSex().equals(Data.sex.female)) female = true;
+                    if (d.getSex().equals(Sex.Male)) male = true;
+                    if (d.getSex().equals(Sex.Female)) female = true;
                 }
                 male = Boolean.logicalAnd(male, cv.gridview_maleVisible);
                 female = Boolean.logicalAnd(female, cv.gridview_femaleVisible);

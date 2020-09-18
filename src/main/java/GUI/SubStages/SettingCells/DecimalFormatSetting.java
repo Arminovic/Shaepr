@@ -19,13 +19,13 @@ public class DecimalFormatSetting extends SettingCell {
 
         ObservableList<String> availableFormats = FXCollections.observableList(new Vector<>());
         availableFormats.addAll("0.00", "0.0", "0");
-        ComboBox comboBox = new ComboBox<>(availableFormats);
+        ComboBox<String> comboBox = new ComboBox<>(availableFormats);
 
         try {
             comboBox.getSelectionModel().select(((DecimalFormat)field.get(instance)).toPattern());
             comboBox.setOnAction(a -> {
                 try {
-                    field.set(instance, new DecimalFormat((String) comboBox.getValue()));
+                    field.set(instance, new DecimalFormat(comboBox.getValue()));
                     System.out.println(field.getName() + " = " + field.get(instance).toString());
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();

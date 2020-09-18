@@ -3,6 +3,7 @@ package GUI.View;
 import Data.*;
 import GUI.DancerShape;
 import GUI.MainScene;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import javafx.beans.value.ChangeListener;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
@@ -106,9 +107,9 @@ public class GridView {
             DancerShape dancerShape = new DancerShape(p, this);
             if (p.isConnected()) {
                 dancerShape.setId(connectedID);
-            } else if (p.getDancer().getSex() == Data.sex.male) {
+            } else if (p.getDancer().getSex() == Sex.Male) {
                 dancerShape.setId(maleID);
-            } else {
+            } else if (p.getDancer().getSex() == Sex.Female) {
                 dancerShape.setId(femaleID);
             }
             dancerShape.setOnMouseClicked(event -> {

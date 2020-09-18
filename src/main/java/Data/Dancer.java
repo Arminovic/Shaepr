@@ -7,20 +7,21 @@ import java.util.Vector;
 
 public class Dancer{
 
-	private Data.sex sex;
+	private Sex sex;
 	private String name;
 	private int number;
-	private UUID id = UUID.randomUUID();
+	private UUID id;
     private Vector<StringProperty> connectedFields = new Vector<>();
 
-	public Dancer(String name, Data.sex sex){
+	public Dancer(String name, Sex sex){
 		new Dancer(name, sex, -1);
 	}
 
-	public Dancer(String name, Data.sex sex, int number){
+	public Dancer(String name, Sex sex, int number){
         this.name = name;
         this.sex = sex;
 	    this.number = number;
+        id = UUID.randomUUID();
     }
 
     public void connectField(StringProperty field){
@@ -39,11 +40,11 @@ public class Dancer{
         return "Dancer "+ getName();
     }
 
-    public void setSex(Data.sex sex){
+    public void setSex(Sex sex){
 	    this.sex = sex;
     }
 
-	public Data.sex getSex() {
+	public Sex getSex() {
 		return sex;
 	}
 

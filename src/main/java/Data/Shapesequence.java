@@ -36,7 +36,7 @@ public class Shapesequence {
         sequence.addAll(Arrays.asList(shape));
     }
 
-    public void addNewDancer(String name, Data.sex sex){
+    public void addNewDancer(String name, Sex sex){
         Dancer d = new Dancer(name, sex);
         addDancer(d);
     }

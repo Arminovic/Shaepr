@@ -12,7 +12,7 @@ public class Data {
     private static Data instance = null;
     private static CommonValues commonValues = null;
 
-    public enum sex {male, female}
+    //public enum sex {male, female}
 
     private Gson gson = new Gson();
     private Vector<Shapesequence> sequences = new Vector<>();

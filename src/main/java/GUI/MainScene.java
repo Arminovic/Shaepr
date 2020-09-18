@@ -114,7 +114,7 @@ public class MainScene {
                     return 1;
                 }
                 return 0;
-            } else if (o1.getSex() == Data.sex.male) {
+            } else if (o1.getSex() == Sex.Male) {
                 return -1;
             } else {
                 return 1;

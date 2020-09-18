@@ -17,8 +17,7 @@ import javafx.stage.Stage;
 import java.util.List;
 import java.util.Vector;
 
-import static Data.Data.sex.female;
-import static Data.Data.sex.male;
+import Data.Sex;
 
 public class DataManipulationDialogs {
 
@@ -177,11 +176,11 @@ public class DataManipulationDialogs {
         Label dancerNamelbl = new Label("Name: ");
         Label dancerSexlbl = new Label("Sex: ");
         TextField dancerNametxt = new TextField("dancer"+list.size());
-        Vector<Data.sex> sexVector = new Vector<>();
+        Vector<Sex> sexVector = new Vector<>();
         //Data.sex male = Data.sex.male, female = Data.sex.female;
-        sexVector.add(male);
-        sexVector.add(female);
-        ComboBox<Data.sex> dancerSexComBox = new ComboBox<>(FXCollections.observableList(sexVector));
+        sexVector.add(Sex.Male);
+        sexVector.add(Sex.Female);
+        ComboBox<Sex> dancerSexComBox = new ComboBox<>(FXCollections.observableList(sexVector));
         dancerSexComBox.getSelectionModel().select(0);
         Button finnishButton = new Button("add");
         finnishButton.setMaxWidth(Double.MAX_VALUE);
