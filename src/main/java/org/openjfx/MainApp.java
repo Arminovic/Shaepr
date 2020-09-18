@@ -1,5 +1,6 @@
 package org.openjfx;
 
+import Bindings.DancerBinding;
 import Data.Data;
 import GUI.MainScene;
 import javafx.application.Application;
@@ -22,7 +23,9 @@ public class MainApp extends Application{
 
     @Override
     public void start(Stage primaryStage){
-        start1(primaryStage);
+        DancerBinding db = new DancerBinding();
+        db.testConcept();
+        //start1(primaryStage);
         //start2();
     }
 

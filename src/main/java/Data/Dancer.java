@@ -14,7 +14,7 @@ public class Dancer{
     private Vector<StringProperty> connectedFields = new Vector<>();
 
 	public Dancer(String name, Sex sex){
-		new Dancer(name, sex, -1);
+        this(name,sex,-1);
 	}
 
 	public Dancer(String name, Sex sex, int number){
